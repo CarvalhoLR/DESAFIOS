@@ -7,15 +7,14 @@
   <Style>
     body {
       margin: auto;
-      margin-top: 10%;
-      padding: 50px;
-      width: 100%;
-      height: 100%;
+      margin-top: 15vw;
+      padding: 100px;
       display: flex;
       justify-content: center;
       background-image: url(./ceuestrelado5.jpg);
       background-repeat: no-repeat;
-      background-size: auto;
+      background-attachment: fixed;
+      background-size: cover;
       overflow: hidden;
     }
 
@@ -24,6 +23,7 @@
       width: 50em;
       height: 50em;
       position: relative;
+      margin: 0;
     }
 
     .sun {
@@ -41,7 +41,8 @@
     .moon,
     .mercurio,
     .venus,
-    .marte {
+    .marte,
+    .jupter {
       position: absolute;
       border-style: solid;
       border-color: #535246 transparent transparent transparent;
@@ -82,13 +83,37 @@
       right: 0;
       width: 8em;
       height: 8em;
-      animation: orbit 4s linear infinite;
+      animation: orbit 10s linear infinite;
+    }
+
+    .marte {
+      position: absolute;
+      top: -8em;
+      left: -15em;
+      bottom: -70em;
+      width: 90em;
+      height: 90em;
+      animation: orbit 53.5s linear infinite;
+
+    }
+
+    .jupter {
+      position: absolute;
+      top: -19em;
+      left: -30em;
+      bottom: -70em;
+      width: 120em;
+      height: 120em;
+      animation: orbit 70.5s linear infinite;
+
     }
 
     .earth::before,
     .moon::before,
     .mercurio::before,
-    .venus::before {
+    .venus::before,
+    .marte::before,
+    .jupter::before {
       content: '';
       position: absolute;
       border-radius: 50%;
@@ -115,7 +140,7 @@
       right: 2.8em;
       width: 3em;
       height: 3em;
-      background: linear-gradient(to top, rgb(44, 82, 136), rgb(18, 78, 3), rgba(174, 127, 86, 0.923), rgb(44, 56, 104), rgb(44, 82, 136));
+      background: linear-gradient(to top, #211C6A, #211C6A, rgb(18, 78, 3)10%, rgb(44, 56, 104), #211C6A, #211C6A);
     }
 
     .moon::before {
@@ -126,6 +151,23 @@
       background-color: rgb(158, 159, 146);
     }
 
+    .marte::before {
+      top: 2.8em;
+      right: 2.8em;
+      margin: 70px;
+      width: 2em;
+      height: 2em;
+      background: linear-gradient(to top, red, darkred);
+    }
+
+    .jupter::before {
+      top: 2.8em;
+      right: 2.8em;
+      margin: 100px;
+      width: 4.5em;
+      height: 4.5em;
+      background: linear-gradient(to right, #D7E4C0, #B4B4B8, #747264, #BBC3A4, #B4B4B8, #747264, #D7E4C0, #BBC3A4, #747264, #D7E4C0);
+    }
 
 
     @keyframes orbit {
@@ -146,6 +188,7 @@
       <div class="moon"></div>
     </div>
     <div class="marte"></div>
+    <div class="jupter"></div>
   </div>
 </body>
 
